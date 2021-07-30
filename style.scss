@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.play {
+    padding: 50px;
+    min-height: 100vh;
+    background-color: aqua;
+    h2 {
+      text-align: center;
+    }
+    &__field {
+      padding: 50px 251px;
+      background-color: cadetblue;
+      width: 50%;
+      margin: 0 auto;
+      height: 100%
+    }
+    &__heading {
+      text-align: center;
+      font-size: 30px;
+    }
+    &__wrapper {
+      position: relative;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4,100px);
+      grid-template-rows: repeat(4, 100px);
+    }
+    &__cell {
+      border: solid black 1px;
+      background-color: white;
+    }
+    &__button {
+      display: block;
+      margin: 40px auto 0 auto;
+      height: 50px;
+      width: 150px;
+      border-radius: 8px;
+      border: none;
+      color: blue;
+      background-color:palegreen;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    &__mini-wrapper {
+      position: absolute;
+    }
+    &__number {
+      border: solid black 1px;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(to top, white, gray);
+      text-align: center;
+      padding: 35px;
+      font-size: 20px;
+      font-weight: 700;
+      &_1 {
+        padding-left: 30px;
+      }
+      &_2 {
+        left: 100px;
+        padding-left: 30px;
+      }
+      &_3 {
+        top: 100px;
+      }
+    }
+    &__direction {
+      margin: 0 auto;
+      margin-top: 50px;
+      display: grid;
+
+
+      width: 200px;
+      grid-template: repeat(3, 50px) / repeat(3, 50px);
+      justify-content: center;
+      align-items: center;
+      &-up {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        transform: rotate(-90deg);
+      }
+      &-right {
+        grid-column: 3/4;
+        grid-row: 2/3;
+      }
+      &-down {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        transform: rotate(90deg);
+      }
+      &-left {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        transform: rotate(-180deg);
+      }
+      img {
+        cursor: pointer;
+        width: 100%;
+        border-color: none;
+      }
+    }
+}
+
+.hide {
+  display: none;
+}
