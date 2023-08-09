@@ -1,0 +1,68 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: blueviolet;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	gap:20px
+}
+
+#game-board {
+	--cell-gap: 2vmin;
+	--cell-size: 18vmin;
+	position: relative;
+	display: flex;
+	gap: var(--cell-gap);
+	border-radius: 10px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 78vmin;
+}
+
+#score {
+	font-size: 20px;
+	color: violet;
+	font-weight: 600;
+}
+
+.cell {
+	background-color: violet;
+	border-radius: 10px;
+	height: var(--cell-size);
+	width: var(--cell-size);
+}
+
+.tile {
+	--y:0;
+	--x:0;
+	position: absolute;
+	top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)));
+	left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)));
+	background-color: hsl(210, 60%, var(--bg-lightness));
+	height: var(--cell-size);
+	width: var(--cell-size);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--font-size);
+	border-radius: 10px;
+	color: hsl(20, 25%, var(--text-lightness));
+	transition: 100ms;
+	animation:  show 100ms;
+
+}
+
+@keyframes show {
+	0% {
+		opacity: 0.5;
+		transform: scale(0);
+	}
+}
